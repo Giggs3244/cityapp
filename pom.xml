@@ -25,5 +25,7 @@
 		<module>cityapp.dbmodel</module>
 		<module>cityapp.test</module>
     <module>cityapp.webservices</module>
+    <module>cityapp.logger</module>
+    <module>cityapp.business</module>
   </modules>
 </project>

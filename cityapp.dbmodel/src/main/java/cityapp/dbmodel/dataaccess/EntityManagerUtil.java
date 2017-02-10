@@ -7,18 +7,28 @@ import javax.persistence.Persistence;
 public class EntityManagerUtil {
 
 	private static final EntityManagerFactory entityManagerFactory;
-	
+
+	private EntityManagerUtil() {
+	}
+
 	static {
 		try {
 			entityManagerFactory = Persistence.createEntityManagerFactory("cityapp");
-		} catch (Throwable ex) {
-			System.err.println("Initial SessionFactory creation failed." + ex);
+		} catch (Exception ex) {
+			System.err.println("Initial EntityManagerFactory creation failed." + ex);
 			throw new ExceptionInInitializerError(ex);
 		}
 	}
 
 	public static EntityManager getEntityManager() {
-		return entityManagerFactory.createEntityManager();
+		EntityManager manager = null;
+		try {
+			manager = entityManagerFactory.createEntityManager();
+		} catch (Exception ex) {
+			System.err.println("Initial EntityManager creation failed." + ex);
+			throw new ExceptionInInitializerError(ex);
+		}
+		return manager;
 	}
 
 }

@@ -35,5 +35,10 @@
 			<groupId>org.glassfish.jersey.media</groupId>
 			<artifactId>jersey-media-moxy</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.pragma</groupId>
+			<artifactId>cityapp.business</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>

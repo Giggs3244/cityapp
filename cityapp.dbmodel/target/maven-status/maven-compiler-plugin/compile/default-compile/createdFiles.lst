@@ -1,2 +1,5 @@
 cityapp\dbmodel\Country.class
 cityapp\dbmodel\City.class
+cityapp\dbmodel\dao\UserDao.class
+cityapp\dbmodel\dataaccess\EntityManagerUtil.class
+cityapp\dbmodel\User.class

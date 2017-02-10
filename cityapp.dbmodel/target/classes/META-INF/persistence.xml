@@ -9,6 +9,7 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>cityapp.dbmodel.City</class>
 		<class>cityapp.dbmodel.Country</class>
+		<class>cityapp.dbmodel.User</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url"

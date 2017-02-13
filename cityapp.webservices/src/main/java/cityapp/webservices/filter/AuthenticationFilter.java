@@ -11,10 +11,8 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
 import javax.xml.bind.DatatypeConverter;
 
-import cityapp.business.HashText;
 import cityapp.business.businessmodel.RespuestaGeneral;
-import cityapp.dbmodel.User;
-import cityapp.dbmodel.dao.UserDao;
+import cityapp.business.UserController;
 
 @Provider
 public class AuthenticationFilter implements ContainerRequestFilter, ContainerResponseFilter {
@@ -29,8 +27,8 @@ public class AuthenticationFilter implements ContainerRequestFilter, ContainerRe
 			System.out.println(authorizationDecoded);
 			StringTokenizer tokenizer = new StringTokenizer(authorizationDecoded, ":");
 			String username = tokenizer.nextToken();
-			String password = HashText.sha1(tokenizer.nextToken());
-			if (validateUser(username, password)) {
+			String password = tokenizer.nextToken();
+			if (UserController.isValidoUser(username, password)) {
 				System.out.println("Bienvenido");
 			} else {
 				requestContext.abortWith(createResponse(Response.Status.UNAUTHORIZED, "Missing Authorization Header"));
@@ -42,7 +40,8 @@ public class AuthenticationFilter implements ContainerRequestFilter, ContainerRe
 	}
 
 	private Response createResponse(Response.Status status, String mensaje) {
-		return Response.status(status).entity(new RespuestaGeneral(status.getStatusCode(), mensaje)).build();
+		RespuestaGeneral respuestaGeneral = new RespuestaGeneral(status.getStatusCode(), mensaje);
+		return Response.status(status).entity(respuestaGeneral).build();
 	}
 
 	@Override

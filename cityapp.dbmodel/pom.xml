@@ -19,11 +19,29 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>5.1.2.Final</version>
+<!-- 			<exclusions> -->
+<!-- 				<exclusion> -->
+<!-- 					<groupId>dom4j</groupId> -->
+<!-- 					<artifactId>dom4j</artifactId> -->
+<!-- 				</exclusion> -->
+<!-- 			</exclusions> -->
+			<exclusions>
+				<exclusion>
+					<groupId>dom4j</groupId>
+					<artifactId>dom4j</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.40</version>
 		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>dom4j</groupId> -->
+<!-- 			<artifactId>dom4j</artifactId> -->
+<!-- 			<version>1.6.1</version> -->
+<!-- 			<scope>provided</scope> -->
+<!-- 		</dependency> -->
 	</dependencies>
 </project>

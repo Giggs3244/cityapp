@@ -22,18 +22,21 @@ public class Country implements Serializable {
 	@Column(nullable = false, length = 255)
 	private String country;
 
-	// bi-directional many-to-one association to City
+	@Column(nullable = false)
+	private byte estado;
+
+	// bi-directional many-to-one association to Ip
 	@OneToMany(mappedBy = "country")
-	private List<City> cities;
+	private List<Ip> ips;
 
 	public Country() {
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -45,31 +48,39 @@ public class Country implements Serializable {
 		this.country = country;
 	}
 
-	public List<City> getCities() {
-		return this.cities;
+	public byte getEstado() {
+		return this.estado;
 	}
 
-	public void setCities(List<City> cities) {
-		this.cities = cities;
+	public void setEstado(byte estado) {
+		this.estado = estado;
 	}
 
-	public City addCity(City city) {
-		getCities().add(city);
-		city.setCountry(this);
-
-		return city;
+	public List<Ip> getIps() {
+		return this.ips;
 	}
 
-	public City removeCity(City city) {
-		getCities().remove(city);
-		city.setCountry(null);
+	public void setIps(List<Ip> ips) {
+		this.ips = ips;
+	}
 
-		return city;
+	public Ip addIp(Ip ip) {
+		getIps().add(ip);
+		ip.setCountry(this);
+
+		return ip;
+	}
+
+	public Ip removeIp(Ip ip) {
+		getIps().remove(ip);
+		ip.setCountry(null);
+
+		return ip;
 	}
 
 	@Override
 	public String toString() {
-		return "Country [id=" + id + ", country=" + country + "]";
+		return "Country [id=" + id + ", country=" + country + ", estado=" + estado + "]";
 	}
 
 }

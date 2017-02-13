@@ -11,7 +11,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.1</version>
+					<version>3.6.1</version>
 					<inherited>true</inherited>
 					<configuration>
 						<source>1.7</source>
@@ -24,8 +24,10 @@
 	<modules>
 		<module>cityapp.dbmodel</module>
 		<module>cityapp.test</module>
-    <module>cityapp.webservices</module>
-    <module>cityapp.logger</module>
-    <module>cityapp.business</module>
+		<module>cityapp.webservices</module>
+		<module>cityapp.logger</module>
+		<module>cityapp.business</module>
+		<module>cityapp.wsclient.geoipservice</module>
+    <module>MyApp</module>
   </modules>
 </project>

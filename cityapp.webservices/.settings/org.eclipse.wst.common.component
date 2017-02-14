@@ -10,6 +10,9 @@
         <dependent-module archiveName="cityapp.dbmodel-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/cityapp.dbmodel/cityapp.dbmodel">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="cityapp.wsclient.geoipservice-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/cityapp.wsclient.geoipservice/cityapp.wsclient.geoipservice">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="cityapp.webservices"/>
         <property name="java-output-path" value="/cityapp.webservices/target/classes"/>
     </wb-module>

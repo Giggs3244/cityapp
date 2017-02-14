@@ -14,7 +14,8 @@ public class App {
 		try {
 			GeoIPService service = new GeoIPService();
 			GeoIPServiceSoap geoIPServiceSoap = service.getGeoIPServiceSoap();
-			GeoIP geoIP = geoIPServiceSoap.getGeoIP("201.184.247.242");
+			// 9.192.115.0
+			GeoIP geoIP = geoIPServiceSoap.getGeoIP("9.192.115.0");
 			System.out.println(geoIP);			
 		} catch (Exception e) {
 			System.out.println("Error en la ip");

@@ -18,18 +18,22 @@ public class Ip implements Serializable {
 	@Column(unique = true, nullable = false)
 	private Integer id;
 
-	@Column(nullable = false)
+	@Column(nullable = false, columnDefinition = "tinyint(4) default '1'")
 	private byte estado;
 
 	@Column(nullable = false, length = 255)
 	private String ip;
 
 	// bi-directional many-to-one association to Country
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "country_id", nullable = false)
 	private Country country;
 
 	public Ip() {
+	}
+
+	public Ip(String _ip) {
+		this.ip = _ip;
 	}
 
 	public Integer getId() {

@@ -2,6 +2,8 @@ package cityapp.dbmodel;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,14 +24,19 @@ public class Country implements Serializable {
 	@Column(nullable = false, length = 255)
 	private String country;
 
-	@Column(nullable = false)
+	@Column(nullable = false, columnDefinition = "tinyint(4) default '1'")
 	private byte estado;
 
 	// bi-directional many-to-one association to Ip
-	@OneToMany(mappedBy = "country")
-	private List<Ip> ips;
+	@OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
+	private List<Ip> ips = new ArrayList<>();
 
 	public Country() {
+	}
+
+	public Country(String _country, String _ip) {
+		this.country = _country;
+		this.ips.add(new Ip(_ip));
 	}
 
 	public Integer getId() {

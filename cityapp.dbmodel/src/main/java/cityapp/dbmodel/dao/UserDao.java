@@ -18,7 +18,7 @@ public class UserDao {
 					.setParameter("password", password)
 					.getResultList();
 		} catch (Exception ex) {
-			ex.printStackTrace();
+			return null;
 		} finally {
 			if (manager != null) {
 				manager.close();

@@ -47,5 +47,8 @@
         <dependent-module archiveName="mysql-connector-java.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="cityapp.logger.jar" deploy-path="/lib" handle="module:/resource/cityapp.logger/cityapp.logger">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
     </wb-module>
 </project-modules>

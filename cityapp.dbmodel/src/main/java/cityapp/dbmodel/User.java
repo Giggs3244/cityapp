@@ -18,7 +18,7 @@ public class User implements Serializable {
 	@Column(unique = true, nullable = false)
 	private Integer id;
 
-	@Column(nullable = false)
+	@Column(nullable = false, columnDefinition = "tinyint(4) default '1'")
 	private byte estado;
 
 	@Column(nullable = false, length = 255)

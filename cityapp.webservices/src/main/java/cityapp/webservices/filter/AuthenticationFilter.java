@@ -31,10 +31,10 @@ public class AuthenticationFilter implements ContainerRequestFilter, ContainerRe
 			if (UserController.isValidoUser(username, password)) {
 				System.out.println("Bienvenido");
 			} else {
-				requestContext.abortWith(createResponse(Response.Status.UNAUTHORIZED, "Missing Authorization Header"));
+				requestContext.abortWith(createResponse(Response.Status.UNAUTHORIZED, "Unauthorized."));
 			}
 		} else {
-			requestContext.abortWith(createResponse(Response.Status.BAD_REQUEST, "Missing Authorization Header"));
+			requestContext.abortWith(createResponse(Response.Status.BAD_REQUEST, "Missing Authorization Header."));
 		}
 		System.out.println("Into filter request");
 	}

@@ -1,17 +1,25 @@
 package cityapp.business.businessmodel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class RespuestaGeneral {
 
 	private int codigo;
-	private String mensaje;
+	private List<String> mensajes = new ArrayList<>();;
 
 	public RespuestaGeneral() {
+
 	}
 
 	public RespuestaGeneral(int codigo, String mensaje) {
 		super();
 		this.codigo = codigo;
-		this.mensaje = mensaje;
+		this.mensajes.add(mensaje);
+	}
+
+	public void addErrorMessage(String mensaje) {
+		this.mensajes.add(mensaje);
 	}
 
 	public int getCodigo() {
@@ -22,12 +30,12 @@ public class RespuestaGeneral {
 		this.codigo = codigo;
 	}
 
-	public String getMensaje() {
-		return mensaje;
+	public List<String> getMensaje() {
+		return mensajes;
 	}
 
-	public void setMensaje(String mensaje) {
-		this.mensaje = mensaje;
+	public void setMensaje(List<String> mensajes) {
+		this.mensajes = mensajes;
 	}
 
 }

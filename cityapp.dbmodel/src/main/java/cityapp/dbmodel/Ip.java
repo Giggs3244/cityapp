@@ -66,6 +66,7 @@ public class Ip implements Serializable {
 
 	public void setCountry(Country country) {
 		this.country = country;
+		country.getIps().add(this);
 	}
 
 }

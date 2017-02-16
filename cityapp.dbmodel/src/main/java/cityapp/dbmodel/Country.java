@@ -34,9 +34,8 @@ public class Country implements Serializable {
 	public Country() {
 	}
 
-	public Country(String _country, String _ip) {
+	public Country(String _country) {
 		this.country = _country;
-		this.ips.add(new Ip(_ip));
 	}
 
 	public Integer getId() {
@@ -72,9 +71,8 @@ public class Country implements Serializable {
 	}
 
 	public Ip addIp(Ip ip) {
-		getIps().add(ip);
+		this.ips.add(ip);
 		ip.setCountry(this);
-
 		return ip;
 	}
 

@@ -1,4 +1,6 @@
 cityapp\webservices\filter\AuthenticationFilter.class
 cityapp\webservices\CountryResource.class
+cityapp\webservices\validation\ContraintViolationEntity.class
 cityapp\webservices\config\App.class
 cityapp\webservices\MyResource.class
+cityapp\webservices\validation\BeanConstraintViolationExceptionMapper.class

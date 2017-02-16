@@ -1,5 +1,6 @@
 package cityapp.webservices;
 
+import javax.validation.Valid;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -16,7 +17,7 @@ public class CountryResource {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getCountry(IpRq ipRq) {
+	public Response getCountry(@Valid IpRq ipRq) {
 		System.out.println(ipRq.getIp());
 		GeoIPVo geoIPVo = new GeoIPVo();
 		return geoIPVo.getGeoIPByIP(ipRq);

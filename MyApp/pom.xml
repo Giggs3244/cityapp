@@ -39,6 +39,11 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.pragma</groupId>
+			<artifactId>cityapp.exceptions</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>${project.artifactId}</finalName>

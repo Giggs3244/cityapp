@@ -14,6 +14,7 @@ import java.util.List;
 @Table(name = "country")
 @NamedQuery(name = "Country.findAll", query = "SELECT c FROM Country c")
 public class Country implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	@Id

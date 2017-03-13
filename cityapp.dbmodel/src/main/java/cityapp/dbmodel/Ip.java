@@ -11,6 +11,7 @@ import javax.persistence.*;
 @Table(name = "ip")
 @NamedQuery(name = "Ip.findAll", query = "SELECT i FROM Ip i")
 public class Ip implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	@Id

@@ -4,9 +4,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import org.cityapp.exceptions.DatabaseException;
+
 public class EntityManagerUtil {
 
-	private static final EntityManagerFactory entityManagerFactory;
+	private static EntityManagerFactory entityManagerFactory;
 
 	private EntityManagerUtil() {
 	}
@@ -14,19 +16,17 @@ public class EntityManagerUtil {
 	static {
 		try {
 			entityManagerFactory = Persistence.createEntityManagerFactory("cityapp");
-		} catch (Exception ex) {
-			System.err.println("Initial EntityManagerFactory creation failed." + ex);
-			throw new ExceptionInInitializerError(ex);
+		} catch (Exception e) {
+			throw new ExceptionInInitializerError("Initial EntityManagerFactory creation failed.");
 		}
 	}
 
-	public static EntityManager getEntityManager() {
+	public static EntityManager getEntityManager() throws DatabaseException {
 		EntityManager manager = null;
 		try {
 			manager = entityManagerFactory.createEntityManager();
 		} catch (Exception ex) {
-			System.err.println("Initial EntityManager creation failed." + ex);
-			throw new ExceptionInInitializerError(ex);
+			throw new DatabaseException("Initial EntityManager creation failed.", ex);
 		}
 		return manager;
 	}

@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import org.cityapp.exceptions.DatabaseException;
 import org.junit.Test;
 
 import cityapp.dbmodel.Country;
@@ -15,7 +16,7 @@ import cityapp.dbmodel.dataaccess.EntityManagerUtil;
 public class CountryTest {
 
 	@Test
-	public void getCountryByName() {
+	public void getCountryByName() throws DatabaseException {
 		
 		String countryName = "Colombia";
 		

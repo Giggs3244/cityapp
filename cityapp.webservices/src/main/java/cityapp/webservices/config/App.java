@@ -9,6 +9,7 @@ import javax.ws.rs.core.Application;
 import cityapp.webservices.CountryResource;
 import cityapp.webservices.MyResource;
 import cityapp.webservices.filter.AuthenticationFilter;
+import cityapp.webservices.provider.DatabaseExceptionMapper;
 import cityapp.webservices.validation.BeanConstraintViolationExceptionMapper;
 
 @ApplicationPath("resources")
@@ -21,6 +22,7 @@ public class App extends Application {
 		resources.add(BeanConstraintViolationExceptionMapper.class);
 		resources.add(AuthenticationFilter.class);
 		resources.add(MyResource.class);
+		resources.add(DatabaseExceptionMapper.class);
 		return resources;
 	}
 

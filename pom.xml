@@ -29,6 +29,7 @@
 		<module>cityapp.logger</module>
 		<module>cityapp.business</module>
 		<module>cityapp.wsclient.geoipservice</module>
+		<module>cityapp.exceptions</module>
 		<module>MyApp</module>
 	</modules>
 </project>

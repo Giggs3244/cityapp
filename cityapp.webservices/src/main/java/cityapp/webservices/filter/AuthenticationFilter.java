@@ -11,7 +11,10 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
 import javax.xml.bind.DatatypeConverter;
 
+import org.cityapp.exceptions.DatabaseException;
+
 import cityapp.business.businessmodel.RespuestaGeneral;
+import cityapp.logger.LoggerUtil;
 import cityapp.business.UserController;
 
 @Provider
@@ -28,10 +31,15 @@ public class AuthenticationFilter implements ContainerRequestFilter, ContainerRe
 			StringTokenizer tokenizer = new StringTokenizer(authorizationDecoded, ":");
 			String username = tokenizer.nextToken();
 			String password = tokenizer.nextToken();
-			if (UserController.isValidoUser(username, password)) {
-				System.out.println("Bienvenido");
-			} else {
-				requestContext.abortWith(createResponse(Response.Status.UNAUTHORIZED, "Unauthorized."));
+			try {
+				if (UserController.isValidoUser(username, password)) {
+					System.out.println("Bienvenido");
+				} else {
+					requestContext.abortWith(createResponse(Response.Status.UNAUTHORIZED, "Unauthorized."));
+				}
+			} catch (DatabaseException e) {
+				LoggerUtil.error(AuthenticationFilter.class, "No se pudo validar el usuario con username: " + username,
+						e);
 			}
 		} else {
 			requestContext.abortWith(createResponse(Response.Status.BAD_REQUEST, "Missing Authorization Header."));

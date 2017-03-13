@@ -8,13 +8,12 @@
 		<artifactId>cityapp</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>cityapp.wsclient.geoipservice</artifactId>
-	<name>cityapp.wsclient.geoipservice</name>
+	<artifactId>cityapp.exceptions</artifactId>
+	<name>cityapp.exceptions</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
-
 	</dependencies>
 </project>

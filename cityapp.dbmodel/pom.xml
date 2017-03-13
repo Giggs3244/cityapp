@@ -19,12 +19,12 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>5.1.2.Final</version>
-<!-- 			<exclusions> -->
-<!-- 				<exclusion> -->
-<!-- 					<groupId>dom4j</groupId> -->
-<!-- 					<artifactId>dom4j</artifactId> -->
-<!-- 				</exclusion> -->
-<!-- 			</exclusions> -->
+			<!-- <exclusions> -->
+			<!-- <exclusion> -->
+			<!-- <groupId>dom4j</groupId> -->
+			<!-- <artifactId>dom4j</artifactId> -->
+			<!-- </exclusion> -->
+			<!-- </exclusions> -->
 			<exclusions>
 				<exclusion>
 					<groupId>dom4j</groupId>
@@ -37,11 +37,21 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.40</version>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>dom4j</groupId> -->
-<!-- 			<artifactId>dom4j</artifactId> -->
-<!-- 			<version>1.6.1</version> -->
-<!-- 			<scope>provided</scope> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>dom4j</groupId> -->
+		<!-- <artifactId>dom4j</artifactId> -->
+		<!-- <version>1.6.1</version> -->
+		<!-- <scope>provided</scope> -->
+		<!-- </dependency> -->
+		<dependency>
+			<groupId>com.pragma</groupId>
+			<artifactId>cityapp.exceptions</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.pragma</groupId>
+			<artifactId>cityapp.logger</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>

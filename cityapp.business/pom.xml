@@ -43,6 +43,10 @@
 			<artifactId>cityapp.wsclient.geoipservice</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>com.pragma</groupId>
+			<artifactId>cityapp.logger</artifactId>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
 
 	</dependencies>

@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.pragma</groupId>
-		<artifactId>CityApp</artifactId>
+		<artifactId>cityapp</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>App</artifactId>
@@ -51,6 +51,13 @@
 				<version>2.10.1</version>
 
 				<configuration>
+					<modules>
+						<webModule>
+							<groupId>com.pragma</groupId>
+							<artifactId>cityapp.webservices</artifactId>
+							<contextRoot>/</contextRoot>
+						</webModule>
+					</modules>
 					<!-- Tell Maven we are using Java EE 7 -->
 					<version>7</version>
 					<!-- Use Java EE ear libraries as needed -->
